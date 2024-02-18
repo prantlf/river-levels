@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>River Levels</title>
+
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+  <style>
+    body {
+      font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      background-color: #f7f7f7;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 0 16px 0 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    header > img {
+      height: 36px;
+      margin: 14px 12px 14px 0;
+    }
+
+    #title {
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    #body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      overflow: auto;
+    }
+
+    #body > p {
+      margin: 16px;
+    }
+
+    #body > img {
+      object-fit: contain;
+      overflow: auto;
+    }
+
+    #attribution {
+      margin-top: 32px;
+      font-size: 75%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="river-levels.png" alt="logo"></img>
+    <h1 id="title">River Levels</h1>
+  </header>
+  <main id="body">
+    <p>Waiting for the data...</p>
+    <p id="attribution">(The icon was drawn by <a href="https://www.flaticon.com/free-icons/ocean" alt="ocean icons" target="_blank">Saepul Nahwan - Flaticon</a>.)</p>
+  </main>
+
+  <script type="module">
+    import { callFunction } from './iframe.guest.js'
+
+    const { title, image } = await callFunction('getWidgetData')
+    document.title = document.getElementById('title').innerText = title
+
+    const body = document.getElementById('body')
+    body.innerHTML = ''
+    const imageEl = document.createElement('img')
+    imageEl.alt = 'river levels'
+    imageEl.src = image
+    body.appendChild(imageEl)
+
+    imageEl.addEventListener('click', () => {
+      open(image, 'river-levels', 'popup,width=796,height=578')
+    })
+  </script>
+</body>
+</html>

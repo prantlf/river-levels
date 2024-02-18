@@ -1,0 +1,39 @@
+{
+  "title": "River Levels",
+  "description": "Shows a chart of river levels served as an image from a specified URL. (The icon was drawn by Saepul Nahwan - www.flaticon.com.)",
+  "kind": "header",
+  "supportedKinds": ["fullpage", "header", "tile", "widetile"],
+  "type": "rex/widgets/iframe",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "url": {
+        "title": "IFrame URL",
+        "description": "URL of a a HTML page with the contents of the iframe.",
+        "type": "string",
+        "readonly": true,
+        "default": "https://prantlf.github.io/river-levels/river-levels.html"
+      },
+      "title": {
+        "title": "Title",
+        "description": "Title text to display in the widget header.",
+        "type": "string",
+        "default": "Wasserpegel Isar in Lenggries"
+      },
+      "image": {
+        "title": "Image URL",
+        "description": "URL of an image with the water levels.",
+        "type": "string",
+        "readonly": true,
+        "default": "https://www.hnd.bayern.de/webservices/graphik.php?cache=hnd&statnr=16003003&thema=hochwasser.meldestufen&wert=wasserstand&vhs=false&geber=0"
+      }
+    }
+  },
+  "options": {
+    "fields": {
+      "url": {
+        "hidden": true
+      }
+    }
+  }
+}
