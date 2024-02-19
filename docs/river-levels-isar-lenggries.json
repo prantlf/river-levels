@@ -1,6 +1,6 @@
 {
-  "title": "River Levels",
-  "description": "Shows a chart of river levels served as an image from a specified URL. (The icon was drawn by Saepul Nahwan - www.flaticon.com.)",
+  "title": "River Levels of Isar at Lenggries",
+  "description": "Shows a chart of the water level of Isar at Lenggries served as an image from www.hnd.bayern.de. (The icon was drawn by Saepul Nahwan - www.flaticon.com.)",
   "kind": "header",
   "supportedKinds": ["fullpage", "header", "tile", "widetile"],
   "type": "rex/widgets/iframe",
